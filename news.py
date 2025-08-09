@@ -5,7 +5,7 @@ from textblob import TextBlob
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
-NEWS_API_KEY = st.secrets("NEWS_API_KEY")
+NEWS_API_KEY = st.secrets["NEWS_API_KEY"]
 
 @st.cache_resource
 def load_bias_model():
