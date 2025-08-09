@@ -4,13 +4,8 @@ import requests
 from textblob import TextBlob
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
-import os
-from dotenv import load_dotenv 
 
-if os.getenv("NEWS_API_KEY") is None:
-    load_dotenv()
-
-NEWS_API_KEY = os.getenv("NEWS_API_KEY")
+NEWS_API_KEY = st.secrets("NEWS_API_KEY")
 
 @st.cache_resource
 def load_bias_model():
